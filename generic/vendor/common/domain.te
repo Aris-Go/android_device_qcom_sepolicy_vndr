@@ -83,12 +83,15 @@ neverallow { domain
 - vendor_chre
 - vendor_dspservice
 - vendor_vppservice
+- vendor_hexlpservice
 - hal_contexthub_default
 - hal_sensors_default
 - hal_camera_default
+- hal_audio_default
 userdebug_or_eng(` -vendor_usta_app')
 userdebug_or_eng(` -vendor_ustaservice_app')
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
+userdebug_or_eng(` -vendor_snapcam_app')
 }vendor_xdsp_device:chr_file *;
 
 neverallow { domain -init -vendor_init - ueventd } vendor_xdsp_device:chr_file ~{r_file_perms};
@@ -104,7 +107,6 @@ neverallow { domain
 - vendor_audioadsprpcd
 - hal_camera_default
 - vendor_qvrd_vndr
-- vendor_hexlpservice
 - vendor_thermal-engine
 - vendor_dspservice
 userdebug_or_eng(` -vendor_sysmonapp_app_test')
